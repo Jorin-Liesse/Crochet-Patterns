@@ -39,7 +39,7 @@ function addRecipe(name, ingredients, directions, image) {
 
   makeCard({ data: data });
 
-  fetch("https://jorin-liesse-recipe-api.onrender.com/addRecipe", options)
+  fetch("https://jorin-liesse-crochet-api.onrender.com/addRecipe", options)
     .then((response) => response.json())
     .then(data => console.log(data))
     .catch(error => console.error(error));
@@ -83,7 +83,7 @@ function updateRecipeTest(oldName, newName, ingredients, directions, image) {
     }
   }
 
-  fetch(`https://jorin-liesse-recipe-api.onrender.com/updateRecipe/${oldName}`, options)
+  fetch(`https://jorin-liesse-crochet-api.onrender.com/updateRecipe/${oldName}`, options)
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error(error));
@@ -109,7 +109,7 @@ function deleteRecipe(name) {
     }
   }
 
-  fetch(`https://jorin-liesse-recipe-api.onrender.com/deleteRecipe/${name}`, options)
+  fetch(`https://jorin-liesse-crochet-api.onrender.com/deleteRecipe/${name}`, options)
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error(error));
@@ -123,7 +123,7 @@ function fetchRecipes() {
   loading = true;
   loader.style.display = 'flex';
 
-  fetch(`https://jorin-liesse-recipe-api.onrender.com/getRecipes/${pageRecipes}`)
+  fetch(`https://jorin-liesse-crochet-api.onrender.com/getRecipes/${pageRecipes}`)
     .then(response => response.json())
     .then(data => {
 
@@ -154,7 +154,7 @@ function fetchSearchRecipes(searchTerm) {
   loading = true;
   loader.style.display = 'flex';
 
-  fetch(`https://jorin-liesse-recipe-api.onrender.com/searchRecipes/${searchTerm}`)
+  fetch(`https://jorin-liesse-crochet-api.onrender.com/searchRecipes/${searchTerm}`)
     .then(response => response.json())
     .then(data => {
       makeCard(data);
