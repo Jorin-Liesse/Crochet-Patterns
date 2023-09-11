@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="styles/addButton.css" />
   <link rel="stylesheet" href="styles/searchBar.css" />
   <link rel="stylesheet" href="styles/card.css" />
-  <link rel="stylesheet" href="styles/addEditRecipePopup.css" />
-  <link rel="stylesheet" href="styles/deleteRecipePopup.css" />
+  <link rel="stylesheet" href="styles/addEditPopup.css" />
+  <link rel="stylesheet" href="styles/deletePopup.css" />
   <link rel="stylesheet" href="styles/loading.css" />
   <title>Crochet Patterns</title>
 </head>
@@ -23,7 +23,7 @@
       <form role="search" id="search-bar-form">
         <div class="left">
           <ion-icon id="search-bar-icon" name="search"></ion-icon>
-          <input type="search" id="search-bar-input" placeholder="Search Recipe" />
+          <input type="search" id="search-bar-input" placeholder="Search Crochet" />
         </div>
         <div class="right">
           <object id="search-bar-logo" data="assets/icon.svg" type="image/svg+xml"></object>
@@ -83,15 +83,15 @@
               <input class="add-file-upload-input" type='file' onchange="displaySelectedImage(this, 'add-file-upload-image');" accept="image/*" />
             </div>
 
-            <textarea id="add-name-text-area-front" rows="2" oninput="linkNameAreas(this, 'add-name-text-area-back');" placeholder="Dish Name"></textarea>
+            <textarea id="add-name-text-area-front" rows="2" oninput="linkNameAreas(this, 'add-name-text-area-back');" placeholder="Pattern Name"></textarea>
           </div>
         </div>
 
         <div class="card card-upload">
           <div class="card-face">
-            <textarea id="add-name-text-area-back" rows="2" oninput="linkNameAreas(this, 'add-name-text-area-front');" placeholder="Dish Name"></textarea>
+            <textarea id="add-name-text-area-back" rows="2" oninput="linkNameAreas(this, 'add-name-text-area-front');" placeholder="Pattern Name"></textarea>
 
-            <textarea id="add-ingredients-text-area" rows="4" placeholder="Ingredients"></textarea>
+            <textarea id="add-ingredients-text-area" rows="4" placeholder="Colors"></textarea>
             <textarea id="add-directions-text-area" rows="7" placeholder="Directions"></textarea>
           </div>
         </div>
@@ -99,7 +99,7 @@
 
       <div class="submit">
         <div class="add-submit-button">
-          <p>Add Dish Recipe</p>
+          <p>Add Pattern</p>
         </div>
       </div>
     </form>
@@ -116,15 +116,15 @@
               <input class="edit-file-upload-input" type='file' onchange="displaySelectedImage(this, 'edit-file-upload-image');" accept="image/*" />
             </div>
 
-            <textarea id="edit-name-text-area-front" rows="2" oninput="linkNameAreas(this, 'edit-name-text-area-back')" placeholder="Dish Name"></textarea>
+            <textarea id="edit-name-text-area-front" rows="2" oninput="linkNameAreas(this, 'edit-name-text-area-back')" placeholder="Pattern Name"></textarea>
           </div>
         </div>
 
         <div class="card card-upload">
           <div class="card-face">
-            <textarea id="edit-name-text-area-back" rows="2" oninput="linkNameAreas(this, 'edit-name-text-area-front')" placeholder="Dish Name"></textarea>
+            <textarea id="edit-name-text-area-back" rows="2" oninput="linkNameAreas(this, 'edit-name-text-area-front')" placeholder="Pattern Name"></textarea>
 
-            <textarea id="edit-ingredients-text-area" rows="4" placeholder="Ingredients"></textarea>
+            <textarea id="edit-ingredients-text-area" rows="4" placeholder="Colors"></textarea>
             <textarea id="edit-directions-text-area" rows="7" placeholder="Directions"></textarea>
           </div>
         </div>
@@ -132,7 +132,7 @@
 
       <div class="submit">
         <div class="edit-submit-button">
-          <p>Edit Dish Recipe</p>
+          <p>Edit Pattern</p>
         </div>
       </div>
     </form>
@@ -142,7 +142,7 @@
     <div class="delete-recipe-container">
       <div class="warning-delete-recipe">
         <p>Are you sure you want</p>
-        <p>to delete this recipe?</p>
+        <p>to delete this pattern?</p>
       </div>
       
       <div class="delete-button">
