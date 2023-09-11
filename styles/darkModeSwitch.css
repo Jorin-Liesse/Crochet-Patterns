@@ -1,0 +1,305 @@
+:root {
+  --width: 6rem;
+  --height: 3rem;
+}
+
+.wrapper {
+  width: var(--width);
+  height: var(--height);
+}
+
+#hide-checkbox {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.toggle {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #211042;
+  border-radius: calc(var(--height) / 2);
+  transition: 500ms;
+  overflow: hidden;
+
+  transform: translate(0, -50%);
+}
+
+
+
+.toggle-button {
+  position: absolute;
+  display: inline-block;
+  top: calc(var(--height) * 0.07);
+  left: 3%; /* 3.5% */
+  width: calc(var(--height) * 0.86);
+  height: calc(var(--height) * 0.86);
+  border-radius: calc(var(--height) * 0.43);
+  background: #FAEAF1;
+  overflow: hidden;
+  box-shadow: 0 0 calc(var(--height) * 0.175) calc(var(--height) * 0.02) rgba(255, 255, 255);
+  transition: all 500ms ease-out;
+}
+
+.crater {
+  position: absolute;
+  display: inline-block;
+  background: #FAEAF1;
+  border-radius: 50%; /* !!! */
+  transition: 500ms;
+}
+
+.crater-1 {
+  background: #FFFFF9;
+  width: calc(var(--height) * 0.86);
+  height: calc(var(--height) * 0.86);
+  left: calc(var(--height) * 0.1);
+  bottom: calc(var(--height) * 0.1);
+}
+
+.crater-2 {
+  width: calc(var(--height) * 0.2);
+  height: calc(var(--height) * 0.2);
+  top: calc(var(--height) * -0.07);
+  left: calc(var(--height) * 0.44);
+}
+
+.crater-3 {
+  width: calc(var(--height) * 0.16);
+  height: calc(var(--height) * 0.16);
+  top: calc(var(--height) * 0.2);
+  right: calc(var(--height) * -0.04);
+}
+
+.crater-4 {
+  width: calc(var(--height) * 0.1);
+  height: calc(var(--height) * 0.1);
+  top: calc(var(--height) * 0.24);
+  left: calc(var(--height) * 0.3);
+}
+
+.crater-5 {
+  width: calc(var(--height) * 0.15);
+  height: calc(var(--height) * 0.15);
+  top: calc(var(--height) * 0.4);
+  left: calc(var(--height) * 0.48);
+}
+
+.crater-6 {
+  width: calc(var(--height) * 0.1);
+  height: calc(var(--height) * 0.1);
+  top: calc(var(--height) * 0.48);
+  left: calc(var(--height) * 0.2);
+}
+
+.crater-7 {
+  width: calc(var(--height) * 0.12);
+  height: calc(var(--height) * 0.12);
+  bottom: calc(var(--height) * 0.05);
+  left: calc(var(--height) * 0.35);
+}
+
+.star {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  background: #FFF;
+  box-shadow: calc(var(--height) * 0.01) 0 calc(var(--height) * 0.02) calc(var(--height) * 0.02) rgba(255, 255, 255);
+}
+
+.star-1 {
+  width: calc(var(--height) * 0.06);
+  height: calc(var(--height) * 0.06);
+  right: calc(var(--height) * 0.9);
+  bottom: calc(var(--height) * 0.4);
+}
+
+.star-2 {
+  width: calc(var(--height) * 0.08);
+  height: calc(var(--height) * 0.08);
+  right: calc(var(--height) * 0.7);
+  top: calc(var(--height) * 0.1);
+}
+
+.star-3 {
+  width: calc(var(--height) * 0.05);
+  height: calc(var(--height) * 0.05);
+  right: calc(var(--height) * 0.6);
+  bottom: calc(var(--height) * 0.15);
+}
+
+.star-4 {
+  width: calc(var(--height) * 0.03);
+  height: calc(var(--height) * 0.03);
+  right: calc(var(--height) * 0.4);
+  bottom: calc(var(--height) * 0.5);
+}
+
+.star-5 {
+  width: calc(var(--height) * 0.04);
+  height: calc(var(--height) * 0.04);
+  right: calc(var(--height) * 0.1);
+  bottom: calc(var(--height) * 0.35);
+}
+
+.star-6, .star-7, .star-8 {
+  width: calc(var(--height) * 0.1);
+  height: calc(var(--height) * 0.02);
+  border-radius: calc(var(--height) * 0.02);
+  transform: rotate(-45deg);
+  box-shadow: calc(var(--height) * 0.05) 0px calc(var(--height) * 0.04) calc(var(--height) * 0.01) #FFF;
+  animation-name: travel;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+.star-6 {
+  right: calc(var(--height) * 0.3);
+  bottom: calc(var(--height) * 0.3);
+  animation-delay: -2s;
+}
+
+.star-7 {
+  right: calc(var(--height) * 0.5);
+  bottom: calc(var(--height) * 0.6);
+}
+
+.star-8 {
+  right: calc(var(--height) * 0.9);
+  top: calc(var(--height) * 0.1);
+  animation-delay: -4s;
+}
+
+@keyframes travel {
+  0% {
+    transform: rotate(-45deg) translateX(calc(var(--height) * 0.35));
+  }
+
+  50% {
+    transform: rotate(-45deg) translateX(calc(var(--height) * -0.1));
+    box-shadow: calc(var(--height) * 0.05) 0 calc(var(--height) * 0.06) calc(var(--height) * 0.01) #FFF;
+  }
+
+  100% {
+    transform: rotate(-45deg) translateX(calc(var(--height) * -0.15));
+    width: calc(var(--height) * 0.02);
+    height: calc(var(--height) * 0.02);
+    opacity: 0;
+    box-shadow: none;
+  }
+}
+
+#hide-checkbox:checked + .toggle {
+  background: #24D7F7;
+}
+
+#hide-checkbox:checked + .toggle .toggle-button {
+  background: #F7FFFF;
+  transform: translateX(calc(var(--height) * 1.02));
+  box-shadow: 0 0 35px 5px rgba(255, 255, 255);
+}
+
+#hide-checkbox:checked + .toggle .toggle-button .crater {
+  transform: rotate(-45deg) translateX(calc(var(--height) * 0.7));
+}
+
+#hide-checkbox:checked + .toggle .star {
+  animation: move 2s infinite;
+  transform: none;
+  box-shadow: none;
+}
+
+#hide-checkbox:checked + .toggle .star-1 {
+  width: calc(var(--height) * 0.4);
+  height: calc(var(--height) * 0.1);
+  border-radius: calc(var(--height) * 0.1);
+  background: #FFF;
+  left: calc(var(--height) * 0.2);
+  top: calc(var(--height) * 0.25);
+  box-shadow: none;
+}
+
+#hide-checkbox:checked + .toggle .star-2 {
+  width: calc(var(--height) * 0.12);
+  height: calc(var(--height) * 0.12);
+  background: #FFF;
+  left: calc(var(--height) * 0.26);
+  top: calc(var(--height) * 0.23);
+  box-shadow: calc(var(--height) * -0.01) 0 calc(var(--height) * 0.02) 0 rgba(0, 0 , 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-3 {
+  width: calc(var(--height) * 0.16);
+  height: calc(var(--height) * 0.16);
+  background: #FFF;
+  left: calc(var(--height) * 0.39);
+  top: calc(var(--height) * 0.19);
+  box-shadow: calc(var(--height) * -0.01) 0 calc(var(--height) * 0.02) 0 rgba(0, 0 , 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-4 {
+  width: calc(var(--height) * 0.14);
+  height: calc(var(--height) * 0.14);
+  background: #FFF;
+  left: calc(var(--height) * 0.46);
+  top: calc(var(--height) * 0.21);
+  box-shadow: calc(var(--height) * -0.01) 0 calc(var(--height) * 0.02) 0 rgba(0, 0 , 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-5 {
+  width: calc(var(--height) * 0.6);
+  height: calc(var(--height) * 0.15);
+  border-radius: calc(var(--height) * 0.15);
+  background: #FFF;
+  left: calc(var(--height) * 0.3);
+  bottom: calc(var(--height) * 0.2);
+  box-shadow: none;
+}
+
+#hide-checkbox:checked + .toggle .star-6 {
+  width: calc(var(--height) * 0.18);
+  height: calc(var(--height) * 0.18);
+  background: #FFF;
+  border-radius: 50%;
+  left: calc(var(--height) * 0.38);
+  bottom: calc(var(--height) * 0.2);
+  box-shadow: calc(var(--height) * -0.01) 0 calc(var(--height) * 0.02) 0 rgba(0, 0 , 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-7 {
+  width: calc(var(--height) * 0.24);
+  height: calc(var(--height) * 0.24);
+  background: #FFF;
+  border-radius: 50%;
+  left: calc(var(--height) * 0.52);
+  bottom: calc(var(--height) * 0.2);
+  box-shadow: calc(var(--height) * -0.01) 0 calc(var(--height) * 0.02) 0 rgba(0, 0 , 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-8 {
+  width: calc(var(--height) * 0.21);
+  height: calc(var(--height) * 0.21);
+  background: #FFF;
+  border-radius: 50%;
+  left: calc(var(--height) * 0.7);
+  top: calc(var(--height) * 0.59);
+  box-shadow: calc(var(--height) * -0.01) 0 calc(var(--height) * 0.02) 0 rgba(0, 0 , 0, 0.1);
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(calc(var(--height) * 0.02));
+  }
+  
+  50% {
+    transform: translateX(calc(var(--height) * -0.02));
+  }
+  
+  100% {
+    transform: translateX(calc(var(--height) * 0.02));
+  }
+}

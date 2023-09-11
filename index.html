@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" />
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg" sizes="any" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/darkModeSwitch.css" />
+  <link rel="stylesheet" href="styles/addButton.css" />
+  <link rel="stylesheet" href="styles/searchBar.css" />
+  <link rel="stylesheet" href="styles/card.css" />
+  <link rel="stylesheet" href="styles/addEditRecipePopup.css" />
+  <link rel="stylesheet" href="styles/deleteRecipePopup.css" />
+  <link rel="stylesheet" href="styles/loading.css" />
+  <title>Recipe Book</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <form role="search" id="search-bar-form">
+        <div class="left">
+          <ion-icon id="search-bar-icon" name="search"></ion-icon>
+          <input type="search" id="search-bar-input" placeholder="Search Recipe" />
+        </div>
+        <div class="right">
+          <object id="search-bar-logo" data="assets/icon.svg" type="image/svg+xml"></object>
+        </div>
+      </form>
+    </div>
+
+    <div class="header-right">
+      <div class="wrapper">
+        <input type="checkbox" id="hide-checkbox" />
+        <label for="hide-checkbox" class="toggle">
+          <span class="toggle-button">
+            <span class="crater crater-1"></span>
+            <span class="crater crater-2"></span>
+            <span class="crater crater-3"></span>
+            <span class="crater crater-4"></span>
+            <span class="crater crater-5"></span>
+            <span class="crater crater-6"></span>
+            <span class="crater crater-7"></span>
+          </span>
+          <span class="star star-1"></span>
+          <span class="star star-2"></span>
+          <span class="star star-3"></span>
+          <span class="star star-4"></span>
+          <span class="star star-5"></span>
+          <span class="star star-6"></span>
+          <span class="star star-7"></span>
+          <span class="star star-8"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="section"></div>
+
+    <div class="loader">
+      <ion-icon class="loader-icon" name="refresh"></ion-icon>
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="add-button">
+      <ion-icon id="add-button-icon" name="add"></ion-icon>
+    </div>
+  </footer>
+
+  <section class="popup-overlay-add-recipe">
+    <form id="addRecipeForm" enctype="multipart/form-data">
+      <div class="card-container">
+        <div class="card card-upload">
+          <div class="card-face">
+            <div class="file-upload">
+              <img class="add-file-upload-image" src="#">
+              <ion-icon id="file-upload-icon" name="add"></ion-icon>
+              <input class="add-file-upload-input" type='file' onchange="displaySelectedImage(this, 'add-file-upload-image');" accept="image/*" />
+            </div>
+
+            <textarea id="add-name-text-area-front" rows="2" oninput="linkNameAreas(this, 'add-name-text-area-back');" placeholder="Dish Name"></textarea>
+          </div>
+        </div>
+
+        <div class="card card-upload">
+          <div class="card-face">
+            <textarea id="add-name-text-area-back" rows="2" oninput="linkNameAreas(this, 'add-name-text-area-front');" placeholder="Dish Name"></textarea>
+
+            <textarea id="add-ingredients-text-area" rows="4" placeholder="Ingredients"></textarea>
+            <textarea id="add-directions-text-area" rows="7" placeholder="Directions"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit">
+        <div class="add-submit-button">
+          <p>Add Dish Recipe</p>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="popup-overlay-edit-recipe">
+    <form id="editRecipeForm" enctype="multipart/form-data">
+      <div class="card-container">
+        <div class="card card-upload">
+          <div class="card-face">
+            <div class="file-upload">
+              <img class="edit-file-upload-image" src="#">
+              <ion-icon id="file-upload-icon" name="add"></ion-icon>
+              <input class="edit-file-upload-input" type='file' onchange="displaySelectedImage(this, 'edit-file-upload-image');" accept="image/*" />
+            </div>
+
+            <textarea id="edit-name-text-area-front" rows="2" oninput="linkNameAreas(this, 'edit-name-text-area-back')" placeholder="Dish Name"></textarea>
+          </div>
+        </div>
+
+        <div class="card card-upload">
+          <div class="card-face">
+            <textarea id="edit-name-text-area-back" rows="2" oninput="linkNameAreas(this, 'edit-name-text-area-front')" placeholder="Dish Name"></textarea>
+
+            <textarea id="edit-ingredients-text-area" rows="4" placeholder="Ingredients"></textarea>
+            <textarea id="edit-directions-text-area" rows="7" placeholder="Directions"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit">
+        <div class="edit-submit-button">
+          <p>Edit Dish Recipe</p>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="popup-overlay-delete-recipe">
+    <div class="delete-recipe-container">
+      <div class="warning-delete-recipe">
+        <p>Are you sure you want</p>
+        <p>to delete this recipe?</p>
+      </div>
+      
+      <div class="delete-button">
+        <p>Delete</p>
+      </div>
+    </div>
+  </section>
+    
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

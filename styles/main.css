@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --backgroundColor: 27, 26, 25;
+  --textColor: 226, 225, 223;
+  --elementColor: 59, 58, 57;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  box-sizing: border-box;
+
+  transition: 0.25s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  background-color: rgb(var(--backgroundColor));
+  overflow-x: hidden
+}
+
+body.popup-active {
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  margin: 1rem 0.5rem 0rem 2rem;
+  width: 100%;
+}
+
+.header-right {
+  margin: 1rem 2rem 0rem 0.5rem;
+}
+
+#section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 2rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+
+.loader-icon {
+  font-size: 2.5rem;
+  color: rgb(var(--textColor));
+  animation: spin 1s linear infinite;
+}
+
+@media screen and (max-width: 500px) {
+  .header-left {
+    margin: 0.5rem 0.5rem 0rem 1rem;
+    width: 100%;
+  }
+  
+  .header-right {
+    margin: 0.5rem 1rem 0rem 0.5rem;
+  }
+
+  #section {
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  #section {
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

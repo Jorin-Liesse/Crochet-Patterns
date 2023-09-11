@@ -1,0 +1,41 @@
+.add-button {
+  cursor: pointer;
+  position: fixed;
+
+  bottom: 1.5rem;
+  right: 1.5rem;
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+  border-radius: 1rem;
+  background-color: rgb(var(--elementColor));
+  box-shadow: 0 0 0.5rem 0.25rem rgba(var(--textColor), 0.35);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  user-select: none;
+}
+
+.add-button:hover {
+  transform: scale(0.9);
+}
+
+.add-button:active {
+  transform: scale(1.1);
+}
+
+.add-button.active {
+  z-index: 10;
+}
+
+#add-button-icon {
+  color: rgb(var(--textColor));
+  font-size: 2rem;
+}
+
+#add-button-icon.active {
+  transform: rotate(45deg);
+}

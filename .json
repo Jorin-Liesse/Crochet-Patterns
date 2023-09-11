@@ -1,0 +1,199 @@
+{
+    "american_pancakes": {
+      "name": "American Pancakes",
+      "ingredients":
+        "180ml milk - 125g flour - 1 egg - 15g sugar - 10g baking powder - 3g salt - 30g butter",
+      "directions":
+        "Mix the flour, sugar, baking powder salt. Melt the butter and mix it together with the milk and egg. Then beat until the lumps are gone. Then put it aside for 10 minutes in a dark warm place.",
+      "image": "assets/food/american_pancakes.jpg"
+    },
+  
+    "balls_in_tomato_sauce": {
+      "name": "Tomato Sauce Balls",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/balls_in_tomato_sauce_with_beans_and_fried.jpg"
+    },
+  
+    "butter_cake": {
+      "name": "Butter Cake",
+      "ingredients":
+        "200g butter - 200g sugar - 200g flour - 4g baking powder - 4 eggs - 1 lemon - 1 pinch of salt",
+      "directions":
+        "Preheat oven to 175°C. Grease and flour the cake pan. Cream butter and sugar. Add eggs and add the lemon mix it. Then add the flour and baking powder, mix gently. Pour batter into pan and bake for 25-30 minutes.",
+      "image": "assets/food/butter_cake.jpg"
+    },
+  
+    "cauliflower": {
+      "name": "Cauliflower",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/cauliflower_with_puree_and_farmers_farmers.jpg"
+    },
+  
+    "chocolate_chip_cookies": {
+      "name": "Chocolate Chip Cookies",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/chocolate_chip_cookies.jpg"
+    },
+  
+    "chocolate_mousse": {
+      "name": "Chocolate Mousse",
+      "ingredients":
+        "120g white/dark chocolate - 250g cream - 75g egg white - 60g sugar",
+      "directions":
+        "Whip up the cream. Beat the egg white then add the sugar. Melt the chocolate together with a little cream in a bain marie. add the chocolate to the cream and mix gently. mix in the cream carefully. Put it in the fridge for 3 hours.",
+      "image": "assets/food/chocolate_mousse.jpg"
+    },
+  
+    "creme_brulee": {
+      "name": "Creme Brulee",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/creme_brulee.jpg"
+    },
+  
+    "dumplings": {
+      "name": "Dumplings",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/dumplings.jpg"
+    },
+  
+    "french_pancakes": {
+      "name": "French Pancakes",
+      "ingredients": "250g flour - 500ml milk - 3 eggs - 15g vanilla sugar",
+      "directions":
+        "Add everything together and then mix well until all lumps are gone. Then you can start baking.",
+      "image": "assets/food/french_pancakes.jpg"
+    },
+  
+    "gratin_dauphinois": {
+      "name": "Gratin Dauphinois",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/gratin_dauphinois.jpg"
+    },
+  
+    "greek_pasta": {
+      "name": "Greek Pasta",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/greek_pasta.jpg"
+    },
+  
+    "hete_bliksem": {
+      "name": "Hete Bliksem",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/hete_bliksem.jpg"
+    },
+  
+    "macaroni_and_cheese": {
+      "name": "Macaroni And Cheese",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/macaroni_and_cheese.jpg"
+    },
+  
+    "oven_dish_with_minced_meat_spinach_and_herb": {
+      "name": "Oven Dish",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/oven_dish_with_minced_meat_spinach_and_herb.jpg"
+    },
+  
+    "pasta_scampi_with_leek": {
+      "name": "Pasta Scampi",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/pasta_scampi_with_leek.jpg"
+    },
+  
+    "penne_arrabiata": {
+      "name": "Penne Arrabiata",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/penne_arrabiata.jpg"
+    },
+  
+    "penne_bolognese": {
+      "name": "Penne Bolognese",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/penne_bolognese.jpg"
+    },
+  
+    "penne_pesto": {
+      "name": "Penne Pesto",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/penne_pesto.jpg"
+    },
+  
+    "potato_salad": {
+      "name": "Potato Salad",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/potato_salad.jpg"
+    },
+  
+    "red_salmon": {
+      "name": "Red Salmon",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/red_salmon_with_sauce_and_puree.jpg"
+    },
+  
+    "rice_with_chicken_curry": {
+      "name": "Rice Chicken Curry",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/rice_with_chicken_curry.jpg"
+    },
+  
+    "wraps": {
+      "name": "Wraps",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/smoked_salmon_wraps.jpg"
+    },
+  
+    "speculoos": {
+      "name": "Speculoos",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/speculoos.jpg"
+    },
+  
+    "tomato_soup": {
+      "name": "Tomato Soup",
+      "ingredients":
+        "250g tomato - 30g onion - 300g potato - 1 celery- 1l water - 2 cubes vegetable stock - spices",
+      "directions":
+        "Start boiling the water and add the vegetable stock and let it boil for 20 minutes. Add the rest and let it cook for 1 hour and mix it afterwards.",
+      "image": "assets/food/tomato_soup.jpg"
+    },
+  
+    "tortilla": {
+      "name": "Tortilla",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/tortilla.jpg"
+    },
+  
+    "vol_au_vent": {
+      "name": "Vol Au Vent",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/vol_au_vent_with_fries.jpg"
+    },
+  
+    "waffles": {
+      "name": "Waffles",
+      "ingredients": "ingredients",
+      "directions": "directions",
+      "image": "assets/food/waffles.jpg"
+    }
+  }
