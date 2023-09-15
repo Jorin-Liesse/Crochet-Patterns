@@ -186,11 +186,13 @@ function makeCard(data) {
               <ion-icon class="edit-icon" name="create"></ion-icon>
           
               <p class="name-back">${data[key]["name"]}</p>
-              <p class="ingredients">${data[key]["ingredients"]}</p>
-              <p class="directions">${data[key]["directions"]}</p>
+              <pre class="ingredients">${data[key]["ingredients"]}</pre>
+              <pre class="directions">${data[key]["directions"]}</pre>
             </div>
           </div>
         </div>`;
+
+        console.log(data[key]["directions"]);
     }
   }
 
