@@ -6,11 +6,54 @@ let pageSearchRecipes = 1;
 let loading = false;
 let hasMoreContent = true;
 
-function getRecipes() {
-  removeCard();
-  fetchRecipes();
+const images = [];
 
-  window.addEventListener('scroll', handleScroll);
+async function getRecipes() {
+  removeCards();
+
+  loadedData = loadLocalStorage('recipes');
+
+  if (loadedData !== null) makeCard(loadedData);
+
+  fetchData();
+}
+
+async function fetchData() {
+  const loader = document.querySelector('.loader');
+
+  let hasMoreContent = true;
+  if (loading || !hasMoreContent) return;
+
+  loading = true;
+  loader.style.display = 'flex';
+  images.length = 0;
+
+  while (hasMoreContent) {
+    const response = await fetch(`https://jorin-liesse-crochet-api.onrender.com/getRecipes/${pageRecipes}`);
+    const data = await response.json();
+
+    if (data.length === 0) hasMoreContent = false;
+    
+    else {
+      saveLocalStorage('recipes', data);
+      data.forEach(element => {
+          images.push({_id: element._id, image: element.image});
+      });
+
+      pageRecipes++;
+    }
+
+    if (!hasMoreContent) {
+      loading = false;
+      loader.style.display = 'none';
+
+      loadedData = loadLocalStorage('recipes');
+      removeCards();
+      if (loadedData !== null) makeCard(loadedData);
+
+      break;
+    }
+  }
 }
 
 function handleScroll() {
@@ -46,7 +89,7 @@ function addRecipe(name, ingredients, directions, image) {
 }
 
 function searchRecipes(searchTerm) {
-  removeCard();
+  removeCards();
 
   window.removeEventListener('scroll', handleScroll);
 
@@ -115,48 +158,19 @@ function deleteRecipe(name) {
     .catch(error => console.error(error));
 }
 
-function fetchRecipes() {
-  const loader = document.querySelector('.loader');
-
-  if (loading || !hasMoreContent) return;
-
-  loading = true;
-  loader.style.display = 'flex';
-
-  fetch(`https://jorin-liesse-crochet-api.onrender.com/getRecipes/${pageRecipes}`)
-    .then(response => response.json())
-    .then(data => {
-
-      if (data.length === 0) {
-        hasMoreContent = false;
-        loader.style.display = 'none';
-      }
-
-      else {
-        hasMoreContent = true;
-        makeCard(data);
-        pageRecipes++;
-      }
-
-      loading = false;
-      loader.style.display = 'none';
-    })
-    .catch(error => {
-      console.error(error)
-      loading = false;
-      loader.style.display = 'none';
-    });
-}
-
 function fetchSearchRecipes(searchTerm) {
   const loader = document.querySelector('.loader');
 
   loading = true;
   loader.style.display = 'flex';
+  images.length = 0;
 
   fetch(`https://jorin-liesse-crochet-api.onrender.com/searchRecipes/${searchTerm}`)
     .then(response => response.json())
     .then(data => {
+      data.forEach(element => {
+        images.push({_id: element._id, image: element.image});
+      });
       makeCard(data);
       loading = false;
       loader.style.display = 'none';
@@ -164,7 +178,7 @@ function fetchSearchRecipes(searchTerm) {
     .catch(error => console.error(error));
 }
 
-function removeCard() {
+function removeCards() {
   const main = document.getElementById("section");
   main.innerHTML = "";
 } 
@@ -175,7 +189,7 @@ function makeCard(data) {
   for (let key in data) {
     if (data.hasOwnProperty(key)) {
       main.innerHTML += `
-        <div class="card">
+        <div class="card" id="${data[key]["_id"]}">
           <div class="card-inner">
             <div class="card-face card-front">
               <img class="image" src="${data[key]["image"]}">
@@ -186,14 +200,20 @@ function makeCard(data) {
               <ion-icon class="edit-icon" name="create"></ion-icon>
           
               <p class="name-back">${data[key]["name"]}</p>
-              <pre class="ingredients">${data[key]["ingredients"]}</pre>
-              <pre class="directions">${data[key]["directions"]}</pre>
+              <p class="ingredients">${data[key]["ingredients"]}</p>
+              <p class="directions">${data[key]["directions"]}</p>
             </div>
           </div>
         </div>`;
-
-        console.log(data[key]["directions"]);
     }
+  }
+
+  if (images.length > 0) {
+    images.forEach(element => {
+      const card = document.getElementById(element._id);
+      const image = card.querySelector('.image');
+      image.src = element.image;
+    });
   }
 
   handleCardClick();
@@ -209,9 +229,9 @@ function toggleLightMode(lightMode) {
     lightMode = !lightMode;
 
     if (lightMode === true) {
-      root.style.setProperty("--backgroundColor", "249, 249, 249");
-      root.style.setProperty("--textColor", "95, 95, 95");
-      root.style.setProperty("--elementColor", "225, 225, 225");
+      root.style.setProperty("--backgroundColor", "255, 255, 255");
+      root.style.setProperty("--textColor", "95, 99, 104");
+      root.style.setProperty("--elementColor", "241, 243, 244");
     } else if (lightMode === false) {
       root.style.setProperty("--backgroundColor", "27, 26, 25");
       root.style.setProperty("--textColor", "226, 225, 223");
@@ -563,6 +583,25 @@ function submitEditRecipeForm() {
   });
 }
 
+function saveLocalStorage(key, saveData) {
+  const loadedData = JSON.parse(localStorage.getItem(key)) || [];
+  const idSet = new Set(loadedData.map(item => item._id));
+
+  saveData.forEach(element => {
+    if (!idSet.has(element._id)) {
+      idSet.add(element._id);
+      element.image = "";
+      loadedData.push(element);
+    }
+  });
+
+  localStorage.setItem(key, JSON.stringify(loadedData)); // Save data to local storage
+}
+
+function loadLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key)); //load data from local storage
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   getRecipes();
 
@@ -576,3 +615,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   submitEditRecipeForm();
 });
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('service-worker.js')
+  });
+}
+

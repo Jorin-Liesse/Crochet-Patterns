@@ -1,0 +1,51 @@
+{
+  "name": "Crochet Patterns",
+  "short_name": "Crochet Patterns",
+  "start_url": "/Crochet_Patterns/",
+  "scope": "/Crochet_Patterns/",
+  "display": "fullscreen",
+  "theme_color": "#000",
+  "background_color": "#000",
+  "description": "Welcome to Crochet Patterns, your crochet paradise! Dive into a world of creativity with our curated collection of crochet patterns. From cozy blankets to adorable amigurumi, find your next project here. Join our community and let's stitch something beautiful together!",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/page-crochet-patterns_PC.png",
+      "sizes": "600x338",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/page-crochet-patterns_Mobile.png",
+      "sizes": "418x746",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
