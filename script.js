@@ -11,7 +11,7 @@ const images = [];
 async function getRecipes() {
   removeCards();
 
-  loadedData = loadLocalStorage('recipes');
+  loadedData = loadLocalStorage('patterns');
 
   if (loadedData !== null) makeCard(loadedData);
 
@@ -35,7 +35,7 @@ async function fetchData() {
     if (data.length === 0) hasMoreContent = false;
     
     else {
-      saveLocalStorage('recipes', data);
+      saveLocalStorage('patterns', data);
       data.forEach(element => {
           images.push({_id: element._id, image: element.image});
       });
@@ -47,7 +47,7 @@ async function fetchData() {
       loading = false;
       loader.style.display = 'none';
 
-      loadedData = loadLocalStorage('recipes');
+      loadedData = loadLocalStorage('patterns');
       removeCards();
       if (loadedData !== null) makeCard(loadedData);
 
